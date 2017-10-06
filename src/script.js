@@ -86,7 +86,7 @@ function toto() {
     alert("toto");
 }
 
-function creationclsTableau(idPosFlex, i) {
+function creationclsTableau(idPosFlex, i, titre) {
     var Posflex, d, divclsTableau, divheader, h, input, span, ul;
     d = document.getElementById(idPosFlex);
     divclsTableau = document.createElement("div");
@@ -96,7 +96,7 @@ function creationclsTableau(idPosFlex, i) {
     divheader.setAttribute("class", "header");
 
     h = document.createElement("h2");
-    h.innerHTML = "Param" + i;
+    h.innerHTML = titre;
 
     input = document.createElement("input");
     input.setAttribute("id", "InputTitre" + i);
@@ -120,17 +120,17 @@ function creationclsTableau(idPosFlex, i) {
     divclsTableau.appendChild(ul);
 
     d.appendChild(divclsTableau);
-    
-
+ 
 }
 
 function start() {
-    var i;
-    for (i = 1; i <= 5; i++) {
-        creationclsTableau("PosFlex1", i);
+    var i, tabTitre = ["Système environnants",
+                      "Systèmes de communication", "Acteurs", "Processus", "Infrastructure", "Paramètres environnants", "Paramètres systèmes", "systèmes identiques"];
+    for (i = 1; i <= 4; i++) {
+        creationclsTableau("PosFlex1", i, tabTitre[i - 1]);
     }
-    for (i = 6; i <= 10; i++) {
-        creationclsTableau("PosFlex2", i);
+    for (i = 5; i <= 8; i++) {
+        creationclsTableau("PosFlex2", i, tabTitre[i - 1]);
     }
     gestionLI();
         
